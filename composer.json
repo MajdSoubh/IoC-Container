@@ -1,0 +1,16 @@
+{
+    "name": "maso/service-container",
+    "description": "A basic IoC (inversion of control) container to manage app dependencies",
+    "autoload": {
+        "psr-4": {
+            "Maso\\ServiceContainer\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "MajdSoubh",
+            "email": "majdsoubh53@gmail.com"
+        }
+    ],
+    "require": {}
+}
