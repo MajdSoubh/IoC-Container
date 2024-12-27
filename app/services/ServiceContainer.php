@@ -4,8 +4,9 @@ declare(strict_types=1);
 
 namespace App\Services;
 
+use App\Contracts\ContainerInterface;
 
-class ServiceContainer
+class ServiceContainer implements ContainerInterface
 {
 
     /**
