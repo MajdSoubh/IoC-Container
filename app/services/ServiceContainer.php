@@ -22,35 +22,16 @@ class ServiceContainer implements ContainerInterface
      */
     private array $singletons = [];
 
-    /**
-     * Bind a service or class to the container.
-     * 
-     * @param string $abstract 
-     * @param callable|string $concrete  
-     * @return void
-     */
     public function bind(string $abstract, object|callable|string $concrete): void
     {
         $this->bindings[$abstract] = $concrete;
     }
-    /**
-     * Bind a singleton service or class to the container.
-     * 
-     * @param string $abstract 
-     * @param callable|string $concrete  
-     * @return void
-     */
+
     public function singleton(string $abstract, object|callable|string $concrete): void
     {
         $this->singletons[$abstract] = $concrete;
     }
 
-    /**
-     * Resolve a service or class from the container.
-     * 
-     * @param string $abstract 
-     * @return object
-     */
     public function resolve(string $abstract): object
     {
 
