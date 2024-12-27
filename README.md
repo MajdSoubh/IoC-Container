@@ -39,7 +39,7 @@ php index.php
 1. Bind a Service
    You can bind a service to the container using the bind method. It accepts an identifier (interface, abstract class, or string) and a concrete implementation.
 
-```shell
+```php
 $container = new ServiceContainer\ServiceContainer();
 
 // Bind a concrete class
@@ -51,7 +51,7 @@ $container->bind('logger', function () {
 2. Bind a Singleton
    Use singleton to bind a service as a singleton, ensuring the same instance is used every time.
 
-```shell
+```php
 $container->singleton('fileService', function () use ($container) {
     return new FileService($container->resolve('logger'));
 });
@@ -60,7 +60,7 @@ $container->singleton('fileService', function () use ($container) {
 3. Resolve a Service
    You can resolve a service from the container using its identifier. If the service depends on other classes, the container resolves those dependencies automatically.
 
-```shell
+```php
 $logger = $container->resolve('logger'); // Resolves the Logger instance
 
 $fileService = $container->resolve('fileService'); // Resolves FileService with Logger injected
@@ -69,7 +69,7 @@ $fileService = $container->resolve('fileService'); // Resolves FileService with 
 4. Auto-Resolve Classes
    If a class is not explicitly bound, the container attempts to resolve it automatically by analyzing its constructor and injecting dependencies.
 
-```shell
+```php
 $fileController = $container->resolve(App\Controllers\FileController::class);
 // Automatically resolves FileController and injects FileService
 
