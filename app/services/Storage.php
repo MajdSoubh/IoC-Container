@@ -9,8 +9,18 @@ use App\Contracts\StorageInterface;
 
 class Storage implements StorageInterface
 {
+    /**
+     * Logger instance for logging events.
+     *
+     * @var LoggerInterface
+     */
     private LoggerInterface $logger;
 
+    /**
+     * Constructs a new Storage instance.
+     *
+     * @param LoggerInterface $logger The logger instance to use for logging events.
+     */
     public function __construct(LoggerInterface $logger)
     {
         $this->logger = $logger;
