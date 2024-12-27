@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Contracts\ContainerInterface;
+use App\Contracts\LoggerInterface;
 use App\Services\Logger;
 
 class AppServiceProvider
@@ -10,7 +11,7 @@ class AppServiceProvider
     public static function register(ContainerInterface $container): void
     {
         // Bind Logger as a singleton
-        $container->singleton(Logger::class, fn () => new \App\Services\Logger());
+        $container->singleton(LoggerInterface::class, fn () => new Logger());
 
         // Bind other services...
     }
