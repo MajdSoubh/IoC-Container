@@ -3,7 +3,7 @@
   "description": "A basic IoC (inversion of control) container to manage app dependencies",
   "autoload": {
     "psr-4": {
-      "Maso\\ServiceContainer\\": "src/"
+      "ServiceContainer\\": "src/"
     }
   },
   "authors": [
